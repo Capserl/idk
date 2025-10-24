@@ -16,48 +16,48 @@ let count = Number(localStorage.getItem("count")) || 0;
 let purch1am = Number(localStorage.getItem("purch1am")) || 0;
 
 const btn = document.getElementById("cdred");
- btn.addEventListener("mouseover", () => {
+btn.addEventListener("mouseover", () => {
  btn.style.transform = "scale(1.2)";
- });
- btn.addEventListener("mouseout", () => {
+});
+btn.addEventListener("mouseout", () => {
  btn.style.transform = "scale(1)";
- });
+});
 
 function wait(ms) {
  return new Promise(resolve => setTimeout(resolve,ms));
 }
 
- async function purch1(){
-  const cdred = document.getElementById("cdred")
+async function purch1(){
+const cdred = document.getElementById("cdred")
 
-  cdred.disabled = true;
-  cdred.style.opacity = "0.5";
+cdred.disabled = true;
+cdred.style.opacity = "0.5";
 
-  if (count >= 10 * (purch1am + 1)) {
-    count -= 10 * (purch1am + 1));
-   purch1am++;
-   localStorage.setItem("purch1am", purch1am);
-   localStorage.setItem("count", count);
+if (count >= 10 * (purch1am + 1)) {
+  count -= 10 * (purch1am + 1));
+ purch1am++;
+ localStorage.setItem("purch1am", purch1am);
+  localStorage.setItem("count", count);
     
-   cdred.innerHTML = "purchased";
-   await wait(500);
-   cdreed.innerHTML = "CD reduction";
+  cdred.innerHTML = "purchased";
+  await wait(500);
+  cdreed.innerHTML = "CD reduction";
 
-   cdred.disabled = false;
-   cdred.style.opacity = "1";
+  cdred.disabled = false;
+  cdred.style.opacity = "1";
 
 
-   }  else {
-   cdred.innerHTML = "nuh too broke";
-   cdred.disabled = false;
-
-   cdred.style.opacity = "1";
-  }
+  }  else {
+ cdred.innerHTML = "nuh too broke";
+ cdred.disabled = false;
+ cdred.style.opacity = "1";
+ }
 
 
 </script>
 </body>
 </html>
+
 
 
 
