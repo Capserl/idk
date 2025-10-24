@@ -33,17 +33,17 @@ function wait(ms) {
 }
 
 async function purch1() {
-const cdred = document.getElementById("cdred")
+ const cdred = document.getElementById("cdred")
 
-cdred.disabled = true;
-cdred.style.opacity = "0.5";
+ cdred.disabled = true;
+ cdred.style.opacity = "0.5";
 
-if (count >= 10 * (purch1am + 1)) {
+ if (count >= 10 * (purch1am + 1)) {
   count -= 10 * (purch1am + 1);
- purch1am++;
- localStorage.setItem("purch1am", purch1am);
+  purch1am++;
+  localStorage.setItem("purch1am", purch1am);
   localStorage.setItem("count", count);
-    
+  document.getElementById("countcash").innerHTML = count + " cash";  
   cdred.innerHTML = "purchased";
   await wait(500);
   cdred.innerHTML = "CD reduction";
@@ -52,17 +52,20 @@ if (count >= 10 * (purch1am + 1)) {
   cdred.style.opacity = "1";
 
 
-  }  else {
+}  else {
  cdred.innerHTML = "nuh too broke";
  cdred.disabled = false;
  cdred.style.opacity = "1";
- }
+}
 }
 function back() {
-  window.location.href = "";
+  window.history.back;
+
+}
 </script>
 </body>
 </html>
+
 
 
 
