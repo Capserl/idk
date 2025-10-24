@@ -9,6 +9,7 @@
 <body>
  <h1>TS IS DA SHOP</h1>
  <h2> Upgrades I </h2>
+<p id="countcash">cash</p>
 <button id="cdred" onclick="purch1()" > CD reduction</button>
 <button id="back" onclick="bringback()" > Back broke boi</button>
 
@@ -16,6 +17,8 @@
 <script>
 let count = Number(localStorage.getItem("count")) || 0;
 let purch1am = Number(localStorage.getItem("purch1am")) || 0;
+
+document.getElementById("countcash").innerHTML = count + " cash";
   
 const btn = document.getElementById("cdred");
 btn.addEventListener("mouseover", () => {
@@ -60,6 +63,7 @@ function back() {
 </script>
 </body>
 </html>
+
 
 
 
