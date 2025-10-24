@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Min App</title>
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+ <h1>TS IS DA SHOP</h1>
+ <h2> Upgrades I </h2>
+<button id="cdred" onclick="purch1"> CD reduction</button>
+
+<script>
+let count = Number(localStorage.getItem("count")) || 0;
+let purch1am = Number(localStorage.getItem("purch1am)) || 0;
+
+function wait(ms) {
+ return new Promise(resolver => setTimeout(resolve,ms));
+}
+
+ async function purch1(){
+  const bttn = document.getElementById("bttn")
+
+  bttn.disabled = true;
+  bttn.style.opacity = "0.5";
+
+  if count >= 10 * (purch1 + 1){
+   localStorage.setItem(purch1am("purch1am" + 1);
+   document.getElementById("cdred").innerHTML = "purchased";
+   await wait(500);
+
+   document.getElementById("cdred.innerHTML = "CD reduction";
+
+   bttn.disabled = false;
+   bttn.style.opacity = "1";
+
+
+}  else {
+   document.getElementById("cdred").innerHTML = "nuh too broke";
+   bttn.disabled = false;
+   bttn.style.opacity = "1";
