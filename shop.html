@@ -15,6 +15,14 @@
 let count = Number(localStorage.getItem("count")) || 0;
 let purch1am = Number(localStorage.getItem("purch1am")) || 0;
 
+const btn = document.getElementById("cdred");
+ btn.addEventListener("mouseover", () => {
+ btn.style.transform = "scale(1.2)";
+ });
+ btn.addEventListener("mouseout", () => {
+ btn.style.transform = "scale(1)";
+ });
+
 function wait(ms) {
  return new Promise(resolve => setTimeout(resolve,ms));
 }
@@ -26,34 +34,29 @@ function wait(ms) {
   cdred.style.opacity = "0.5";
 
   if (count >= 10 * (purch1am + 1)){
-   purch1()++;
+   purch1am()++;
     localStorage.setItem("purch1am", purch1am);
-   document.getElementById("cdred").innerHTML = "purchased";
+   cdred.innerHTML = "purchased";
    await wait(500);
 
-   document.getElementById("cdred").innerHTML = "CD reduction";
+   cdreed.innerHTML = "CD reduction";
 
    cdred.disabled = false;
    cdred.style.opacity = "1";
 
 
    }  else {
-   document.getElementById("cdred").innerHTML = "nuh too broke";
+   cdred.innerHTML = "nuh too broke";
    cdred.disabled = false;
 
    cdred.style.opacity = "1";
   }
 
-const btn = document.getElementById("cdred");
- btn.addEventListener("mouseover", () => {
- btn.style.transform = "scale(1.2)";
- });
- btn.addEventListener("mouseout", () => {
- btn.style.transform = "scale(1)";
- });
+
 </script>
 </body>
 </html>
+
 
 
 
