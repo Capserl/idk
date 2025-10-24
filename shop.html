@@ -42,8 +42,17 @@ function wait(ms) {
 
    cdred.style.opacity = "1";
   }
+
+  const btn = document.getElementById("cdred");
+   btn.addEventListener("mouseover", () => {
+     btn.style.transform = "scale(1.2)";
+   });
+   btn.addEventListener("mouseout", () => {
+     btn.style.transform = "scale(1)";
+   });
 </script>
 </body>
+
 
 
 
