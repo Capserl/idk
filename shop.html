@@ -9,7 +9,7 @@
 <body>
  <h1>TS IS DA SHOP</h1>
  <h2> Upgrades I </h2>
-<button id="cdred" onclick="purch1()"> CD reduction</button>
+<button id="cdred" onclick="purch1am()"> CD reduction</button>
 
 <script>
 let count = Number(localStorage.getItem("count")) || 0;
@@ -19,7 +19,7 @@ function wait(ms) {
  return new Promise(resolve => setTimeout(resolve,ms));
 }
 
- async function purch1(){
+ async function purch1am(){
   const cdred = document.getElementById("cdred")
 
   cdred.disabled = true;
@@ -44,5 +44,6 @@ function wait(ms) {
   }
 </script>
 </body>
+
 
 
