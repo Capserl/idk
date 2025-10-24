@@ -9,38 +9,39 @@
 <body>
  <h1>TS IS DA SHOP</h1>
  <h2> Upgrades I </h2>
-<button id="cdred" onclick="purch1"> CD reduction</button>
+<button id="cdred" onclick="purch1()"> CD reduction</button>
 
 <script>
 let count = Number(localStorage.getItem("count")) || 0;
-let purch1am = Number(localStorage.getItem("purch1am)) || 0;
+let purch1am = Number(localStorage.getItem("purch1am")) || 0;
 
 function wait(ms) {
- return new Promise(resolver => setTimeout(resolve,ms));
+ return new Promise(resolve => setTimeout(resolve,ms));
 }
 
  async function purch1(){
-  const bttn = document.getElementById("bttn")
+  const cdred = document.getElementById("cdred")
 
-  bttn.disabled = true;
-  bttn.style.opacity = "0.5";
+  cdred.disabled = true;
+  cdred.style.opacity = "0.5";
 
-  if count >= 10 * (purch1 + 1){
-   localStorage.setItem(purch1am("purch1am" + 1);
+  if (count >= 10 * (purch1 + 1)){
+   purch1am()++;
    document.getElementById("cdred").innerHTML = "purchased";
    await wait(500);
 
-   document.getElementById("cdred.innerHTML = "CD reduction";
+   document.getElementById("cdred.innerHTML" = "CD reduction";
 
-   bttn.disabled = false;
-   bttn.style.opacity = "1";
+   cdred.disabled = false;
+   cdred.style.opacity = "1";
 
 
-}  else {
+   }  else {
    document.getElementById("cdred").innerHTML = "nuh too broke";
-   bttn.disabled = false;
+   cdred.disabled = false;
 
-   bttn.style.opacity = "1";
-
-    </script>
+   cdred.style.opacity = "1";
+  }
+</script>
 </body>
+
