@@ -10,11 +10,13 @@
  <h1>TS IS DA SHOP</h1>
  <h2> Upgrades I </h2>
 <button id="cdred" onclick="purch1()" > CD reduction</button>
+<button id="back" onclick="bringback()" > Back broke boi</button>
 
+  
 <script>
 let count = Number(localStorage.getItem("count")) || 0;
 let purch1am = Number(localStorage.getItem("purch1am")) || 0;
-
+  
 const btn = document.getElementById("cdred");
 btn.addEventListener("mouseover", () => {
  btn.style.transform = "scale(1.2)";
@@ -52,11 +54,13 @@ if (count >= 10 * (purch1am + 1)) {
  cdred.disabled = false;
  cdred.style.opacity = "1";
  }
-
+function back() {
+  
 
 </script>
 </body>
 </html>
+
 
 
 
