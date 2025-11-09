@@ -8,16 +8,18 @@
 </head>
 <body>
  <h1>TS IS DA SHOP</h1>
- <p id="countcash">cash</p>
+ <h2 id="countcash">cash</h2>
  <h2> Upgrades I </h2>
-<button id="cdred" onclick="purch1()" > CD reduction</button>
+<h3>CD reduction</h3>
+<button id="cdred" onclick="purch1()" > purchase</button>
 <button id="back" onclick="back()" > Back broke boi</button>
 
   
 <script>
 let count = Number(localStorage.getItem("count")) || 0;
 let purch1am = Number(localStorage.getItem("purch1am")) || 0;
-
+up1buy == false
+  
 document.getElementById("countcash").innerHTML = count + " cash";
   
 const btn = document.getElementById("cdred");
@@ -38,21 +40,22 @@ async function purch1() {
  cdred.disabled = true;
  cdred.style.opacity = "0.5";
 
- if (count >= 10 * (purch1am + 1)) {
+ if (count >= 10 * (purch1am + 1)) && up1buy == false{
   count -= 10 * (purch1am + 1);
   purch1am++;
   localStorage.setItem("purch1am", purch1am);
   localStorage.setItem("count", count);
   document.getElementById("countcash").innerHTML = count + " cash";  
   cdred.innerHTML = "purchased";
-  await wait(500);
-  cdred.innerHTML = "purchase";
-
   cdred.disabled = false;
   cdred.style.opacity = "1";
+  up1buy = true;
 
 
-}  else {
+} else if up1buy == true{
+   cdred.HTML = "purchased";
+   
+} else {
  cdred.innerHTML = "nuh too broke";
  cdred.disabled = false;
  cdred.style.opacity = "1";
@@ -67,6 +70,7 @@ function back() {
 </script>
 </body>
 </html>
+
 
 
 
